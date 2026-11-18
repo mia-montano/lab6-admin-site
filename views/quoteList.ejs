@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote List</title>
+
+    <%- include('partials/includes.ejs') %>
+</head>
+<body>
+    <%- include('partials/navbar.ejs') %>
+
+    <h1>View/edit quotes</h1>
+
+    <div class="results">
+    <% for (let quote of quotes)  { %>
+        <div class="result-box">
+            <p>"<%= quote.quote %>"</p>
+
+            <p>Category: <%= quote.category %></p>
+
+            <!-- Creates a link to the editQuote route -->
+            <!-- narrowed down to the specific quote Id -->
+            <!-- This route renders the edit form -->
+            <a href="/editQuote?quoteId=<%= quote.quoteId %>">Update</a>
+        </div>
+    <% } %>
+    </div>
+
+    <%- include('partials/footer.ejs') %>
+</body>
+</html>

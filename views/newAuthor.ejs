@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Author</title>
+
+    <%- include('partials/includes.ejs') %>
+</head>
+
+<body>
+    <%- include('partials/navbar.ejs') %>
+
+        <h1>Add a new author</h1>
+
+        <div class="new-author">
+
+            <div class="author-names">
+                <form action="/insertAuthor" method="post">
+                    <label for="firstInput">First Name</label>
+                    <input name="firstName" id="firstInput" value="<%= formObject.firstName %>">
+                    <% if (formErrors.firstName) { %>
+                        <span class="form-error">
+                            <%= formErrors.firstName %>
+                        </span>
+                        <% } %>
+
+                            <label for="lastInput">Last Name</label>
+                            <input name="lastName" id="lastInput" value="<%= formObject.lastName %>">
+                            <% if (formErrors.lastName) { %>
+                                <span class="form-error">
+                                    <%= formErrors.lastName %>
+                                </span>
+                                <% } %>
+            </div>
+
+            <div class="author-dates">
+                <label for="birthInput">Birth Date</label>
+                <input name="birthDate" id="birthInput" type="date" value="<%= formObject.birthDate %>">
+                <% if (formErrors.birthDate) { %>
+                    <span class="form-error">
+                        <%= formErrors.birthDate %>
+                    </span>
+                    <% } %>
+
+                        <label for="deathInput">Death Date</label>
+                        <input name="deathDate" id="deathInput" type="date" value="<%= formObject.deathDate %>">
+                        <% if (formErrors.deathDate) { %>
+                            <span class="form-error">
+                                <%= formErrors.deathDate %>
+                            </span>
+                            <% } %>
+            </div>
+
+
+            <div class="gend-prof-count">
+                <label for="genderInput">Gender</label>
+                <input name="gender" id="genderInput" maxlength="1" value="<%= formObject.gender %>">
+                <% if (formErrors.gender) { %>
+                    <span class="form-error">
+                        <%= formErrors.gender %>
+                    </span>
+                    <% } %>
+
+                        <label for="profInput">Profession</label>
+                        <input name="profession" id="profInput" value="<%= formObject.profession %>">
+                        <% if (formErrors.profession) { %>
+                            <span class="form-error">
+                                <%= formErrors.profession %>
+                            </span>
+                            <% } %>
+
+                                <label for="countryInput">Country</label>
+                                <input name="country" id="countryInput" value="<%= formObject.country %>">
+                                <% if (formErrors.country) { %>
+                                    <span class="form-error">
+                                        <%= formErrors.country %>
+                                    </span>
+                                    <% } %>
+            </div>
+
+            <button id="create-author">Create</button>
+            </form>
+        </div>
+
+        <%- include('partials/footer.ejs') %>
+</body>
+
+</html>

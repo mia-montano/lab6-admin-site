@@ -1,0 +1,135 @@
+.navbar {
+    background-color: rgb(73, 137, 83);
+    border-bottom: 2px #264938 solid;
+    min-height: 75px;
+}
+
+.quote-nav {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    padding-top: 13px;
+    padding-left: 35px;
+}
+
+.link {
+    color: #264935;
+    background-color: rgb(174, 195, 180);
+    border: 2px #264938 solid;
+    border-radius: 2px;
+    padding: 5px;
+}
+
+body {
+    background-color: rgb(252, 241, 226);
+    color: #264938;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#home-title {
+    display: flex;
+    color: #264938;
+    font-size: 100px;
+}
+
+#home-main {
+    min-height: 100vh;
+    justify-items: center;
+    align-content: center;
+}
+
+.new-quote {
+    min-height: 100vh;
+    display: flex;
+    justify-self: center;
+    align-content: center;
+    justify-content: space-around;
+    padding-top: 80px;
+    gap: 40px;
+}
+
+.enter-text {
+    font-size: 30px;
+}
+
+#quote-error {
+    display: flex;
+    flex-direction: column;
+}
+
+.author-cat {
+    display: flex;
+    flex-direction: column;
+}
+
+#quoteInput {
+    height: 65px;
+    width: 265px;
+}
+
+.results {
+    display: flex;
+    flex-direction: wrap;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 50px;
+    min-height: 100vh;
+}
+
+.result-box {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    width: 400px;
+    border: 2px #264938 solid;
+    padding: 15px;
+
+    background-color: rgb(206, 224, 211);
+}
+
+.new-author {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
+    gap: 35px;
+}
+
+.author-names {
+    margin-left: 125px;
+}
+
+.author-dates {
+    margin-left: 132px;
+}
+
+#create-author {
+    width: 100px;
+    align-self: center;
+}
+
+#update-author {
+    width: 100px;
+    align-self: center;
+}
+
+.gend-prof-count {
+    align-self: center;
+}
+
+.footer-logo {
+    display: flex;
+    border-bottom: 2px #264938 solid;
+    border-top-width: 2px;
+    border-top-style: solid;
+    justify-content: center;
+    align-content: center;
+    background-color: #8fb997;
+    min-height: 80px;
+}
+
+.logo-csumb {
+    width: 95px;
+    height: auto;
+}

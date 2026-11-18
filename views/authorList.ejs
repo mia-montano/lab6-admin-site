@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Author List</title>
+
+    <%- include('partials/includes.ejs') %>
+</head>
+<body>
+    <%- include('partials/navbar.ejs') %>
+
+    <h1>View/edit authors</h1>
+
+    <div class="results">
+    <% for (let author of authors)  { %>
+        <div class="result-box">
+            <a href="/editAuthor?authorId=<%= author.authorId %>">Update</a>
+            <%= author.firstName %>
+            <%= author.lastName %>
+
+        </div>
+    <% } %>
+    </div>
+
+    <%- include('partials/footer.ejs') %>
+</body>
+</html>

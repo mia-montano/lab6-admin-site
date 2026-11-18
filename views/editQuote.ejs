@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Quote</title>
+
+    <%- include('partials/includes.ejs') %>
+</head>
+
+<body>
+    <%- include('partials/navbar.ejs') %>
+
+        <h1>Update a quote</h1>
+
+        <div class="new-quote">
+            <div class="enter-quote">
+                <!-- Where you type in the quote -->
+                <form action="/updateQuote" method="post">
+
+                    <!-- This keeps track fo the quote Id we're editing so
+             we can submit this when we click update -->
+                    <input type="hidden" name="quoteId" value="<%= formObject.quoteId %>">
+
+                    <p class="enter-text">Quote to edit: </p>
+                    <label for="quoteInput"></label>
+                    <!-- The "value" being set fills in the text box with the current quote -->
+                    <input name="quote" id="quoteInput" value="<%= formObject.quote %>">
+
+                    <button>Update</button>
+
+                    <!-- Checks if there is a formErrors object 
+             and if it has an entry for the user field  -->
+                    <% if (formErrors.quote) { %>
+                        <span class="form-error">
+                            <%= formErrors.quote %>
+                        </span>
+                        <% } %>
+            </div>
+
+            <div class="author-cat">
+                <label for="authorInput">Author</label>
+                <!-- The if statement is to make sure the correct author is selected by default -->
+                <select name="authorId" id="authorInput">
+                    <% for (let author of formData.authors) { %>
+                        <% if (author.authorId==formObject.authorId) { %>
+                            <option value="<%= author.authorId %>" selected>
+                                <%= author.firstName %>
+                            </option>
+                            <% } else { %>
+                                <option value="<%= author.authorId %>">
+                                    <%= author.firstName %>
+                                </option>
+                                <% } %>
+                                    <% } %>
+                </select>
+
+                <label for="categoryInput">Category</label>
+                <select name="category" id="categoryInput">
+                    <% for (let category of formData.categories) { %>
+                        <% if (category.category==formObject.category) { %>
+                            <option value="<%= category.category %>" selected>
+                                <%= category.category %>
+                            </option>
+                            <% } else { %>
+                                <option value="<%= category.category %>">
+                                    <%= category.category %>
+                                </option>
+                                <% } %>
+                                    <% } %>
+                </select>
+
+                <label for="likesInput">Likes</label>
+                <input name="likes" id="likesInput" type="number" value="<%= formObject.likes %>">
+
+                <% if (formErrors.likes) { %>
+                    <span class="form-error">
+                        <%= formErrors.likes %>
+                    </span>
+                    <% } %>
+            </div>
+            </form>
+        </div>
+
+        <%- include('partials/footer.ejs') %>
+</body>
+
+</html>
